@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary: #bbdefb;
+  --bg: #780000;
+  --c1: #000000;
+  --hp: #535c91;
+  --blue: #46F0F7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--c1);
+  color: var(--primary);
+  /* min-height: 2000px; */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.4rem 4%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.logo {
+  font-size: 30px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a.logo span {
+  color: var(--bg);
+}
+
+.social-media {
+  margin: 0 auto 0 50px;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  text-decoration: none;
+  margin-right: 5px;
+  transition: 0.5s;
+  border-radius: 10px;
+}
+
+.social-media a:hover {
+  background: var(--primary);
+}
+
+.social-media a i {
+  font-size: 20px;
+  color: var(--primary);
+  transition: 0.5s;
+}
+
+.social-media a:hover i {
+  color: var(--bg);
+}
+
+.navbar a {
+  font-size: 18px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 30px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a:hover {
+  color: var(--bg);
+  transition: 0.5s;
+}
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/sun.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  justify-content: center;
+}
+
+.container form {
+  width: 670px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+}
+
+.container form h1 {
+  color: var(--blue);
+  font-weight: 500;
+  margin-top: 20px;
+  width: 500px;
+  text-align: center;
+}
+
+.container form input {
+  color: var(--blue);
+  width: 250px;
+  height: 40px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+  background: none;
+  border-bottom: 2px solid #fff;
+}
+
+.container form input::placeholder {
+  color: #ddd;
+}
+
+.container form #lastname,
+.container form #mobile {
+  margin-left: 20px;
+}
+
+.container form h4 {
+  color: #fff;
+  font-weight: 300;
+  width: 500px;
+  margin-top: 20px;
+}
+
+.container form textarea {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-weight: 200;
+  font-size: 15px;
+  padding: 10px;
+  outline: none;
+  min-width: 520px;
+  max-width: 520px;
+  min-height: 80px;
+  max-height: 80px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(194, 194, 194, 0.713);
+}
+
+.container form #button {
+  border: none;
+  color: var(--bg);
+  background: var(--primary);
+  border-radius: 15px;
+}
+
+.container form #button:hover{
+    transition: ease-in-out .5s;
+    background-color: var(--bg);
+    color: var(--primary);
+}

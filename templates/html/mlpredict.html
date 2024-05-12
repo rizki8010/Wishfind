@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heating and Cooling Load Prediction</title>
+    <link rel="stylesheet" href="../css/mlpredict.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <header class="header">
+        <a href="#" class="logo"><span>Wish</span>Find</a>
+  
+        <div class="social-media">
+          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+          <a href="#"><i class='bx bxl-twitter' ></i></a>
+          <a href="#"><i class='bx bxl-telegram' ></i></a>
+          <a href="#"><i class='bx bxl-instagram-alt' ></i></i></a>
+        </div>
+  
+        <nav class="navbar">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+  
+    <div class="container">
+      <div class="contentcontainer">
+        <h1>Heating load and Cooling load Prediction</h1>
+      </div>
+      <div class="entrycont">
+        <form method="post" action="/predict">
+          <div class="entry">
+            <div class="entryarea">
+              <input type="text" id="Relative_Compactness" name="Relative_Compactness" required >
+            <div class="labelline"> Enter Relative compactness</div>
+        </div>
+        <div class="entryarea">
+            <input type="text" id="Surface_Area" name="Surface_Area" required >
+            <div class="labelline"> Enter Surface Area</div>
+        </div>
+        <div class="entryarea">
+          <input type="text" id="Wall_Area" name="Wall_Area" required >
+            <div class="labelline">Enter Wall Area</div>
+        </div>
+        <div class="entryarea">
+            <input type="text" id="Roof_Area" name="Roof_Area" required >
+            <div class="labelline">Enter Roof Area</div>
+          </div>
+        <div class="entryarea">
+            <input type="text" id="Overall_Height" name="Overall_Height" required >
+            <div class="labelline">Enter Overal Height></div>
+        </div>
+        <div class="entryarea">
+            <input type="text" id="Orientation" name="Orientation" required >
+            <div class="labelline">Enter Orientation</div>
+        </div>
+        <div class="entryarea">
+            <input type="text" id="Glazing_Area" name="Glazing_Area" required >
+            <div class="labelline"> Enter Glazing Area</div>
+        </div>
+        <div class="entryarea">
+            <input type="text" id="Glazing_Area_Distribution" name="Glazing_Area_Distribution" required >
+            <div class="labelline">Enter Glazing Area Distribution</div>
+        </div>
+        </div>
+        
+        <button class="cta" type="submit">Predict</button>
+        {% if heating_load %}
+        <h2>Results:</h2>
+        <p>Heating Load: {{ heating_load }}</p>
+        <p>Cooling Load: {{ cooling_load }}</p>
+        {% endif %}
+      </form>
+    </div>
+    </div>
+
+    <script src="../js/script.js"> </script>
+  </body>
+</html>

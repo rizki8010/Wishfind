@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heating and Cooling Load Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/mlpredict.css') }}"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo"><span>Wish</span>Find</a>
+
+      <div class="social-media">
+        <a href="#"><i class="bx bxl-facebook-circle"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-telegram"></i></a>
+        <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+      </div>
+
+      <nav class="navbar">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('index') }}#about">About</a>
+        <a href="{{ url_for('index') }}#features">Features</a>
+        <a href="{{ url_for('index') }}#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="container1">
+        <h1>Heating load and Cooling load Prediction</h1>
+        <div class="container2">
+          <div class="contentcontainer">
+            <h4>Relative compactness</h4>
+            <p>Is the measure of compactness of the closure of building.</p>
+            <h4>Surface area</h4>
+            <p>
+              The surface area is the total area of all the surfaces of a
+              three-dimensional object.
+            </p>
+            <h4>Wall Area</h4>
+            <p>Area of the building covered by width of the wall</p>
+            <h4>Roof Area</h4>
+            <p>Area covered under roofs</p>
+            <h4>Overal Height</h4>
+            <p>Overall height of building</p>
+            <h4>Orientation</h4>
+            <p>
+              Orientation of building based on direction like (North facing,
+              south facing and others). These are 4 orientations present which
+              are 2,3,4,5. These may be representing north facing, South facing,
+              East facing and West facing.
+            </p>
+            <h4>Glazing Area</h4>
+            <p>
+              Glazing area distribution refers to the proportion of the total
+              wall area that is covered by windows, glass walls, glass roof, and
+              similar features. It indicates the percentage of the overall
+              building envelope that consists of glazed surfaces.
+            </p>
+            <h4>Glazing Area Distribution</h4>
+            <p>The glazing area distribution values taken 1, 2, 3, 4, 5 in the dataset. The glazing area distribution combinations included uniform, majority of the distribution in either north, south, east or west.</p>
+          </div>
+          <div class="entrycont">
+            <form id="predict-form" method="post" action="/predict">
+              <div class="entry">
+                <div class="entryarea">
+                  <input
+                    type="text"
+                    id="Relative_Compactness"
+                    name="Relative_Compactness"
+                    required
+                  />
+                  <div class="labelline">Enter Relative compactness</div>
+                </div>
+                <div class="entryarea">
+                  <input
+                    type="text"
+                    id="Surface_Area"
+                    name="Surface_Area"
+                    required
+                  />
+                  <div class="labelline">Enter Surface Area</div>
+                </div>
+                <div class="entryarea">
+                  <input type="text" id="Wall_Area" name="Wall_Area" required />
+                  <div class="labelline">Enter Wall Area</div>
+                </div>
+                <div class="entryarea">
+                  <input type="text" id="Roof_Area" name="Roof_Area" required />
+                  <div class="labelline">Enter Roof Area</div>
+                </div>
+                <div class="entryarea">
+                  <input
+                    type="text"
+                    id="Overall_Height"
+                    name="Overall_Height"
+                    required
+                  />
+                  <div class="labelline">Enter Overal Height</div>
+                </div>
+                <div class="entryarea">
+                  <input
+                    type="text"
+                    id="Orientation"
+                    name="Orientation"
+                    required
+                  />
+                  <div class="labelline">Enter Orientation</div>
+                </div>
+                <div class="entryarea">
+                  <input
+                    type="text"
+                    id="Glazing_Area"
+                    name="Glazing_Area"
+                    required
+                  />
+                  <div class="labelline">Enter Glazing Area</div>
+                </div>
+                <div class="entryarea">
+                  <input
+                    type="text"
+                    id="Glazing_Area_Distribution"
+                    name="Glazing_Area_Distribution"
+                    required
+                  />
+                  <div class="labelline">Enter Glazing Area Distribution</div>
+                </div>
+              </div>
+
+              <button class="cta" type="submit">Predict</button>
+              {% if heating_load %}
+              <h2>Results:</h2>
+              <p>Heating Load: {{ heating_load }}</p>
+              <p>Cooling Load: {{ cooling_load }}</p>
+              {% endif %}
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
