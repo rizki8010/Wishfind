@@ -137,9 +137,10 @@
               <button class="cta" type="submit">Predict</button>
               {% if heating_load %}
               <h2>Results:</h2>
-              <p>Heating Load: {{ heating_load }}</p>
-              <p>Cooling Load: {{ cooling_load }}</p>
+              <p>Heating Load: {{ heating_load|round(2) }}</p>
+              <p>Cooling Load: {{ cooling_load|round(2) }}</p>
               {% endif %}
+
             </form>
           </div>
         </div>
